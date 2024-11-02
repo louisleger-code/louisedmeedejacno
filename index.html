@@ -23,12 +23,13 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            position: relative; /* Ajout de position relative pour gérer les bandes */
         }
 
         /* Styles des bandes d'arrière-plan */
         .stripe {
             width: 100%;
-            height: 20%; /* 20% de la hauteur de la fenêtre pour avoir 5 bandes distinctes */
+            height: 20%; /* Chaque bande prend 20% de la hauteur */
         }
 
         .stripe:nth-child(odd) {
@@ -45,8 +46,9 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            position: relative;
-            z-index: 1; /* Assurez-vous que l'en-tête est au-dessus des bandes */
+            position: absolute; /* Utilisation de position absolute pour le menu */
+            top: 0; /* Positionner l'en-tête en haut */
+            z-index: 2; /* Assurez-vous que l'en-tête est au-dessus des bandes */
         }
 
         .header h1 {
@@ -84,7 +86,7 @@
             border-radius: 8px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
             width: 200px;
-            z-index: 2; /* Assurez-vous que le menu est au-dessus des bandes */
+            z-index: 3; /* Assurez-vous que le menu est au-dessus des bandes */
         }
 
         .dropdown-menu a {
@@ -106,8 +108,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 20px; /* Centré verticalement */
             flex: 1;
+            position: relative; /* Position pour superposer la vidéo */
             z-index: 1; /* Assurez-vous que la vidéo est au-dessus des bandes */
         }
 
@@ -145,7 +148,7 @@
 
     <div class="video-container">
         <video autoplay muted loop>
-            <source src="videos/ma_video.mp4" type="video/mp4"> <!-- Assurez-vous que le chemin est correct -->
+            <source src="videos/ma_video.mp4" type="video/mp4"> <!-- Mettez le bon chemin vers votre vidéo ici -->
             Your browser does not support the video tag.
         </video>
     </div>
