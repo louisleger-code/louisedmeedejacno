@@ -6,7 +6,6 @@
     <title>Personal Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Importation de la police "Playfair Display" pour un style luxueux -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <style>
         /* Reset et styles de base */
@@ -22,7 +21,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Fond rayé avec un dégradé pour des bandes de 3 beiges et 2 olives */
             background: linear-gradient(
                 to right,
                 #a3827e 20%,    /* Beige */
@@ -38,7 +36,6 @@
             overflow: hidden;
         }
 
-        /* Styles de l'en-tête */
         .header {
             width: 100%;
             display: flex;
@@ -51,13 +48,12 @@
         .header h1 {
             font-size: 2.5em;
             font-weight: 500;
-            font-family: 'Playfair Display', serif; /* Police luxe */
+            font-family: 'Playfair Display', serif;
             letter-spacing: 2px;
             text-align: center;
-            text-transform: uppercase; /* Mettre en majuscule */
+            text-transform: uppercase;
         }
 
-        /* Styles de l'icône du menu */
         .menu-icon {
             cursor: pointer;
             position: absolute;
@@ -74,16 +70,15 @@
             margin: 4px 0;
         }
 
-        /* Styles du menu déroulant "luxe" */
         .dropdown-menu {
             display: none;
             position: absolute;
-            top: 60px; /* Juste en dessous des 3 lignes */
+            top: 60px;
             left: 20px;
-            background-color: rgba(62, 57, 46, 0.95); /* Fond semi-transparent pour l'effet luxe */
+            background-color: rgba(62, 57, 46, 0.95);
             padding: 10px;
             border-radius: 8px;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Ombre douce pour l'effet luxe */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
             width: 200px;
         }
 
@@ -100,14 +95,13 @@
             background-color: #a3827e;
         }
 
-        /* Section vidéo */
         .video-container {
             width: 100%;
             max-width: 800px;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 20px; /* Centré verticalement */
+            margin-top: 20px;
             flex: 1;
         }
 
@@ -119,11 +113,35 @@
 </head>
 <body>
 
-    <!-- En-tête -->
     <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
         </div>
-     
+        <h1>LOUIS EDMEE DE JACNO</h1>
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="#fashion">Fashion</a>
+            <a href="#lifestyle">Lifestyle</a>
+            <a href="#hospitality">Hospitality</a>
+            <a href="#design">Design</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <div class="video-container">
+        <video autoplay muted loop>
+            <source src="ma_video.mp4" type="video/mp4"> <!-- Remplacez "ma_video.mp4" par le nom de votre fichier vidéo -->
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("dropdownMenu");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
