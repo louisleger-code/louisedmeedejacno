@@ -41,7 +41,6 @@
         .menu-icon {
             cursor: pointer;
             display: inline-block;
-            z-index: 2; /* Make sure menu icon is above the dropdown */
         }
 
         .menu-icon div {
@@ -49,20 +48,6 @@
             height: 3px;
             background-color: white;
             margin: 5px 0;
-            transition: transform 0.3s ease;
-        }
-
-        /* Toggle icon animation */
-        .menu-icon.open div:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-icon.open div:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-icon.open div:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Dropdown menu styles */
@@ -70,20 +55,10 @@
             display: none;
             position: absolute;
             top: 60px;
-            right: 20px;
+            left: 20px;
             background-color: #3e392e;
             padding: 10px;
             border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        .dropdown-menu.show {
-            display: block;
-            opacity: 1;
-            transform: translateY(0);
         }
 
         .dropdown-menu a {
@@ -91,7 +66,6 @@
             text-decoration: none;
             padding: 10px 20px;
             display: block;
-            transition: background-color 0.2s ease;
         }
 
         .dropdown-menu a:hover {
@@ -112,11 +86,11 @@
         }
     </style>
 </head>
-<body onclick="closeMenu(event)">
+<body>
 
     <!-- Header Section -->
     <header class="header">
-        <div class="menu-icon" onclick="toggleMenu(event)">
+        <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
             <div></div>
             <div></div>
@@ -135,7 +109,7 @@
 
     <!-- Video Section -->
     <div class="video-container">
-        <video autoplay muted loop preload="auto">
+        <video autoplay muted loop>
             <source src="path_to_your_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
@@ -143,25 +117,9 @@
 
     <script>
         // JavaScript function to toggle the dropdown menu
-        function toggleMenu(event) {
-            event.stopPropagation(); // Prevents body click event
+        function toggleMenu() {
             const menu = document.getElementById("dropdownMenu");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            // Toggle menu visibility
-            menu.classList.toggle("show");
-            menuIcon.classList.toggle("open");
-        }
-
-        // Function to close the menu if clicking outside of it
-        function closeMenu(event) {
-            const menu = document.getElementById("dropdownMenu");
-            const menuIcon = document.querySelector(".menu-icon");
-
-            if (menu.classList.contains("show") && !event.target.closest(".menu-icon")) {
-                menu.classList.remove("show");
-                menuIcon.classList.remove("open");
-            }
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
