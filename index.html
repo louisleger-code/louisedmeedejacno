@@ -21,19 +21,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: linear-gradient(
-                to right,
-                #a3827e 20%,    /* Beige */
-                #a3827e 20%,    /* Beige */
-                #5b4f3a 20%,    /* Olive */
-                #5b4f3a 40%,    /* Olive */
-                #a3827e 60%,    /* Beige */
-                #a3827e 80%,    /* Beige */
-                #5b4f3a 100%    /* Olive */
-            );
-            background-size: 100% 100%;
             height: 100vh;
             overflow: hidden;
+        }
+
+        .stripe {
+            width: 100%;
+            height: calc(100vh / 5); /* Hauteur de chaque bande */
+        }
+
+        .stripe:nth-child(odd) {
+            background-color: #a3827e; /* Beige pour les lignes impaires */
+        }
+
+        .stripe:nth-child(even) {
+            background-color: #5b4f3a; /* Olive pour les lignes paires */
         }
 
         .header {
@@ -43,6 +45,7 @@
             align-items: center;
             padding: 20px;
             position: relative;
+            z-index: 1; /* Assurez-vous que l'en-tête est au-dessus des bandes */
         }
 
         .header h1 {
@@ -80,6 +83,7 @@
             border-radius: 8px;
             box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
             width: 200px;
+            z-index: 2; /* Assurez-vous que le menu est au-dessus des bandes */
         }
 
         .dropdown-menu a {
@@ -103,6 +107,7 @@
             align-items: center;
             margin-top: 20px;
             flex: 1;
+            z-index: 1; /* Assurez-vous que la vidéo est au-dessus des bandes */
         }
 
         .video-container video {
@@ -112,6 +117,13 @@
     </style>
 </head>
 <body>
+
+    <!-- Bandes d'arrière-plan -->
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
+    <div class="stripe"></div>
 
     <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">
