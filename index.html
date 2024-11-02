@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Importation de la police "Playfair Display" pour un style luxueux -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
     <style>
-        /* Reset and basic styles */
+        /* Reset et styles de base */
         * {
             margin: 0;
             padding: 0;
@@ -14,51 +18,69 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #5b4f3a; /* Olive green background color */
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
+            /* Fond rayé avec des bandes verticales */
+            background: linear-gradient(
+                to right,
+                #5b4f3a 33.33%,    /* Olive */
+                #a3827e 33.33%,    /* Beige */
+                #a3827e 66.66%,    /* Beige */
+                #5b4f3a 66.66%     /* Olive */
+            );
+            background-size: 100% 100%;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        /* Header styles */
+        /* Styles de l'en-tête */
         .header {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 20px;
             position: relative;
         }
 
         .header h1 {
-            font-size: 2em;
-            font-weight: bold;
+            font-size: 2.5em;
+            font-weight: 500;
+            font-family: 'Playfair Display', serif; /* Police luxe */
             letter-spacing: 2px;
+            text-align: center;
         }
 
-        /* Hamburger menu styles */
+        /* Styles de l'icône du menu */
         .menu-icon {
             cursor: pointer;
-            display: inline-block;
+            position: absolute;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .menu-icon div {
             width: 30px;
             height: 3px;
             background-color: white;
-            margin: 5px 0;
+            margin: 4px 0;
         }
 
-        /* Dropdown menu styles */
+        /* Styles du menu déroulant "luxe" */
         .dropdown-menu {
             display: none;
             position: absolute;
-            top: 60px;
+            top: 60px; /* Juste en dessous des 3 lignes */
             left: 20px;
-            background-color: #3e392e;
+            background-color: rgba(62, 57, 46, 0.95); /* Fond semi-transparent pour l'effet luxe */
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Ombre douce pour l'effet luxe */
+            width: 200px;
         }
 
         .dropdown-menu a {
@@ -66,18 +88,23 @@
             text-decoration: none;
             padding: 10px 20px;
             display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
         }
 
         .dropdown-menu a:hover {
-            background-color: #5b4f3a;
+            background-color: #a3827e;
         }
 
-        /* Video section */
+        /* Section vidéo */
         .video-container {
-            width: 80%;
+            width: 100%;
             max-width: 800px;
-            margin-top: 50px;
-            border: 10px solid #3e392e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px; /* Centré verticalement */
+            flex: 1;
         }
 
         .video-container video {
@@ -88,7 +115,7 @@
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- En-tête -->
     <header class="header">
         <div class="menu-icon" onclick="toggleMenu()">
             <div></div>
@@ -97,7 +124,7 @@
         </div>
         <h1>Your Name Here</h1>
 
-        <!-- Dropdown Menu -->
+        <!-- Menu déroulant -->
         <nav class="dropdown-menu" id="dropdownMenu">
             <a href="#fashion">Fashion</a>
             <a href="#lifestyle">Lifestyle</a>
@@ -107,7 +134,7 @@
         </nav>
     </header>
 
-    <!-- Video Section -->
+    <!-- Section vidéo -->
     <div class="video-container">
         <video autoplay muted loop>
             <source src="path_to_your_video.mp4" type="video/mp4">
@@ -116,7 +143,7 @@
     </div>
 
     <script>
-        // JavaScript function to toggle the dropdown menu
+        // Fonction JavaScript pour afficher/masquer le menu déroulant
         function toggleMenu() {
             const menu = document.getElementById("dropdownMenu");
             menu.style.display = menu.style.display === "block" ? "none" : "block";
@@ -124,3 +151,4 @@
     </script>
 </body>
 </html>
+
