@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <style>
+        /* Reset and basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #5b4f3a; /* Olive green background color */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header styles */
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Hamburger menu styles */
+        .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            z-index: 2; /* Make sure menu icon is above the dropdown */
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: transform 0.3s ease;
+        }
+
+        /* Toggle icon animation */
+        .menu-icon.open div:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-icon.open div:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-icon.open div:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Dropdown menu styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #3e392e;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        .dropdown-menu.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #5b4f3a;
+        }
+
+        /* Video section */
+        .video-container {
+            width: 80%;
+            max-width: 800px;
+            margin-top: 50px;
+            border: 10px solid #3e392e;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body onclick="closeMenu(event)">
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu(event)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1>Your Name Here</h1>
+
+        <!-- Dropdown Menu -->
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="#fashion">Fashion</a>
+            <a href="#lifestyle">Lifestyle</a>
+            <a href="#hospitality">Hospitality</a>
+            <a href="#design">Design</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <!-- Video Section -->
+    <div class="video-container">
+        <video autoplay muted loop preload="auto">
+            <source src="path_to_your_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // JavaScript function to toggle the dropdown menu
+        function toggleMenu(event) {
+            event.stopPropagation(); // Prevents body click event
+            const menu = document.getElementById("dropdownMenu");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            // Toggle menu visibility
+            menu.classList.toggle("show");
+            menuIcon.classList.toggle("open");
+        }
+
+        // Function to close the menu if clicking outside of it
+        function closeMenu(event) {
+            const menu = document.getElementById("dropdownMenu");
+            const menuIcon = document.querySelector(".menu-icon");
+
+            if (menu.classList.contains("show") && !event.target.closest(".menu-icon")) {
+                menu.classList.remove("show");
+                menuIcon.classList.remove("open");
+            }
+        }
+    </script>
+</body>
+</html>
