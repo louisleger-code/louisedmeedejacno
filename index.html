@@ -22,13 +22,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Fond rayé avec des bandes verticales */
+            /* Fond rayé avec un dégradé pour des bandes de 3 beiges et 2 olives */
             background: linear-gradient(
                 to right,
-                #5b4f3a 33.33%,    /* Olive */
-                #a3827e 33.33%,    /* Beige */
-                #a3827e 66.66%,    /* Beige */
-                #5b4f3a 66.66%     /* Olive */
+                #a3827e 20%,    /* Beige */
+                #a3827e 20%,    /* Beige */
+                #5b4f3a 20%,    /* Olive */
+                #5b4f3a 40%,    /* Olive */
+                #a3827e 60%,    /* Beige */
+                #a3827e 80%,    /* Beige */
+                #5b4f3a 100%    /* Olive */
             );
             background-size: 100% 100%;
             height: 100vh;
@@ -51,6 +54,7 @@
             font-family: 'Playfair Display', serif; /* Police luxe */
             letter-spacing: 2px;
             text-align: center;
+            text-transform: uppercase; /* Mettre en majuscule */
         }
 
         /* Styles de l'icône du menu */
@@ -122,33 +126,4 @@
             <div></div>
             <div></div>
         </div>
-        <h1>Your Name Here</h1>
-
-        <!-- Menu déroulant -->
-        <nav class="dropdown-menu" id="dropdownMenu">
-            <a href="#fashion">Fashion</a>
-            <a href="#lifestyle">Lifestyle</a>
-            <a href="#hospitality">Hospitality</a>
-            <a href="#design">Design</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
-
-    <!-- Section vidéo -->
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="path_to_your_video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <script>
-        // Fonction JavaScript pour afficher/masquer le menu déroulant
-        function toggleMenu() {
-            const menu = document.getElementById("dropdownMenu");
-            menu.style.display = menu.style.display === "block" ? "none" : "block";
-        }
-    </script>
-</body>
-</html>
-
+     
