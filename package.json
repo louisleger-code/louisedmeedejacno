@@ -1,0 +1,22 @@
+{
+  "name": "louisedmeedejacno",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louisleger-code/louisedmeedejacno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louisleger-code/louisedmeedejacno/issues"
+  },
+  "homepage": "https://github.com/louisleger-code/louisedmeedejacno#readme",
+  "dependencies": {
+    "serve": "^14.2.4"
+  }
+}

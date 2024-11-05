@@ -1,0 +1,187 @@
+
+@font-face {
+	font-family: sl;
+	src: url(/assets/fonts/mytupi\ Bold.ttf);
+}
+
+/* Reset et styles de base */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100vh;
+	overflow: hidden;
+	position: relative; /* Position relative pour gérer les éléments en arrière-plan */
+}
+
+.background-container {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	z-index: -1;
+}
+
+/* Styles des bandes d'arrière-plan */
+.stripe {
+	width: 20%;
+	height: 100%; /* Chaque bande prend 20% de la hauteur */
+}
+
+.stripe:nth-child(even) {
+	background-color: #a3827e; /* Beige pour les lignes impaires */
+}
+
+.stripe:nth-child(odd) {
+	background-color: #5b4f3a; /* Olive pour les lignes paires */
+}
+
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	position: absolute; /* Utilisation de position absolute pour le menu */
+	top: 0; /* Positionner l'en-tête en haut */
+	z-index: 2; /* Assurez-vous que l'en-tête est au-dessus des bandes */
+}
+
+.header h1 {
+	font-size: 1.4em;
+	font-weight: 500;
+	font-family: 'sl', sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.header h1 a,
+.header h1 a:hover,
+.header h1 a:visited,
+.header h1 a:active,
+.header h1 a {
+	text-decoration: none;
+	color: inherit;
+	font-weight: normal;
+}
+
+.menu-icon {
+	cursor: pointer;
+	position: absolute;
+	left: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.menu-icon div {
+	width: 20px;
+	height: 1px;
+	background-color: white;
+	margin: 3px 0;
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 60px;
+	left: 20px;
+	background-color: rgba(62, 57, 46, 0.95);
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+	width: 200px;
+	z-index: 3; /* Assurez-vous que le menu est au-dessus des bandes */
+	text-transform: uppercase;
+}
+
+.dropdown-menu a {
+	color: white;
+	text-decoration: none;
+	padding: 10px 20px;
+	display: block;
+	font-family: "sl", sans-serif;
+	font-size: 0.8em;
+}
+
+.dropdown-menu a:hover {
+	background-color: #a3827e;
+}
+
+.video-container {
+	margin: auto;
+	width: 100%;
+	max-width: 40.4%;
+	display: flex;
+	position: relative; /* Position pour superposer la vidéo */
+	z-index: 1; /* Assurez-vous que la vidéo est au-dessus des bandes */
+}
+
+.video-container video {
+	width: 100%;
+	height: auto;
+}
+
+.section-nav-container {
+	padding: 0 1.6em;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.section-nav-container div {
+	flex: 1 1 25%;
+	margin: 1.6em;
+}
+
+.section-nav-container img {
+	width: 100%;
+}
+
+.text-container {
+	margin: auto;
+	max-width: 600px;
+}
+
+.text-container p {
+	text-align: justify;
+}
+
+.text-container p + p {
+	margin-top: 1.2em;
+}
+
+.form-container {
+	margin: auto;
+	width: 320px;
+	font-size: 1.2em;
+}
+
+.form-container form {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: stretch;
+}
+
+.form-container form > * + * {
+	margin-top: 0.6em;
+}
+
+.form-container input, .form-container textarea {
+	width: 100%;
+	font-size: 1em;
+	font-family: sans-serif;
+}
