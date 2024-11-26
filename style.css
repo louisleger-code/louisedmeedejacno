@@ -186,7 +186,8 @@ body {
 
 .text-block {
 	max-height: calc(100vh - 28px - 51px);
-	max-width: 80%;
+	max-width: 900px;
+	width: 80%;
 	position: relative;
 	display: flex;
 	gap: 24px;
