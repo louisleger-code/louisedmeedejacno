@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOUIS EDMEE DE JACNO</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body class="black-text">
+
+    <div class="background-container">
+        <!-- Bandes d'arrière-plan -->
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+        <div class="stripe"></div>
+    </div>
+
+    <header class="header">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1><a href="index.html">LOUIS EDMEE DE JACNO</a></h1>
+
+        <nav class="dropdown-menu" id="dropdownMenu">
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+    <div class="background-overlay">
+        <div class="mosaic-bloc">
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/1 - TESLA.jpg" class="mosaic__thumbnail" alt="Tesla" />
+                <div class="mosaic__caption">TESLA</div>
+            </a>
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/2 - MERCEDES.jpeg" class="mosaic__thumbnail" alt="Mercedes" />
+                <div class="mosaic__caption">MERCEDES</div>
+            </a>
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/3 - PEUGEOT VOYAGE X DELSEY.jpg" class="mosaic__thumbnail" alt="Peugeot Voyage x Delsey" />
+                <div class="mosaic__caption">PEUGEOT VOYAGE X DELSEY</div>
+            </a>
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/4 - SLIP.jpg" class="mosaic__thumbnail" alt="Slip" />
+                <div class="mosaic__caption">SLIP</div>
+            </a>
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/5 - THE LUTYENS GRILL.JPG" class="mosaic__thumbnail" alt="The Lutyens Grill" />
+                <div class="mosaic__caption">THE LUTYENS GRILL</div>
+            </a>
+            <a href="#" class="mosaic">
+                <img src="assets/images/lifestyle/6 - CAVIAR KASPIA.jpg" class="mosaic__thumbnail" alt="Caviar Kaspia" />
+                <div class="mosaic__caption">CAVIAR KASPIA</div>
+            </a>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>

@@ -6,10 +6,12 @@
     <title>LOUIS EDMEE DE JACNO</title>
     <link href="style.css" rel="stylesheet" />
 </head>
-<body>
+<body class="black-text">
 
     <div class="background-container">
         <!-- Bandes d'arrière-plan -->
+        <div class="stripe"></div>
+        <div class="stripe"></div>
         <div class="stripe"></div>
         <div class="stripe"></div>
         <div class="stripe"></div>
@@ -31,13 +33,30 @@
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-
-    <div class="section-nav-container">
-        <div><a href=""><img src="assets/images/Design.JPG" alt="Design"/></a></div>
-        <div><a href=""><img src="assets/images/Hospitality.JPG" alt="Hospitality"/></a></div>
-        <div><a href=""><img src="assets/images/Lifestyle.JPG" alt="Lifestyle"/></a></div>
-        <div><a href=""><img src="assets/images/Mode.jpg" alt="Mode"/></a></div>
+    
+    <div class="background-overlay">
+        <div class="section-nav-container-wrapper">
+            <div class="section-nav-container">
+                <a href="design.html" class="mosaic">
+                    <img src="assets/images/Design.JPG" class="mosaic__thumbnail" alt="Design"/>
+                    <div class="mosaic__caption">DESIGN</div>
+                </a>
+                <a href="hospitality.html" class="mosaic">
+                    <img src="assets/images/Hospitality.JPG" class="mosaic__thumbnail" alt="Hospitality"/>
+                    <div class="mosaic__caption">HOSPITALITY</div>
+                </a>
+                <a href="lifestyle.html" class="mosaic">
+                    <img src="assets/images/Lifestyle.JPG" class="mosaic__thumbnail" alt="Lifestyle"/>
+                    <div class="mosaic__caption">LIFESTYLE</div>
+                </a>
+                <a href="fashion.html" class="mosaic">
+                    <img src="assets/images/Mode.jpg" class="mosaic__thumbnail" alt="Mode"/>
+                    <div class="mosaic__caption">FASHION</div>
+                </a>
+            </div>
+        </div>
     </div>
+
     
     <script type="text/javascript" src="script.js"></script>
 </body>
