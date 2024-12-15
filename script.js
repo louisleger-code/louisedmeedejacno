@@ -10,6 +10,18 @@ function hideMenu() {
 }
 
 (function() {
+	document.addEventListener('DOMContentLoaded', function() {
+    // Get all videos on the page
+    const videos = document.getElementsByTagName('video');
+    
+    // Force play on each video
+    for(let video of videos) {
+        video.play().catch(function(error) {
+            console.log("Video autoplay failed:", error);
+        });
+    }
+});
+
 	document.addEventListener("click", function(event) {
 		if(!$menuIcon.contains(event.target) && !$menu.contains(event.target)) {
 			hideMenu();
