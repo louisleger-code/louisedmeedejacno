@@ -56,9 +56,9 @@ body {
 	justify-content: center;
 	align-items: center;
 	padding: 25px;
-	position: fixed; 
-	top: 0; 
-	z-index: 2; 
+	position: fixed;
+	top: 0;
+	z-index: 2;
 }
 
 .header h1 {
@@ -110,6 +110,19 @@ body {
 	width: 200px;
 	z-index: 3; /* Assurez-vous que le menu est au-dessus des bandes */
 	text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .menu-icon {
+        top: 60px;
+        left: 20px;
+        zoom: 0.95;
+    }
+
+    .dropdown-menu {
+        top: 48px;
+        left: 35px;
+    }
 }
 
 .dropdown-menu a {
@@ -276,7 +289,7 @@ body {
 	padding: 2em;
 }
 
-.form-container p, 
+.form-container p,
 .form-container a {
 	font-size: 10px;
 	color: black;
@@ -299,6 +312,17 @@ body {
 
 .form-image-container img {
 	max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    .form-block {
+        flex-direction: column-reverse;
+    }
+
+    .form-image-container {
+        max-width: 70%;
+        margin-top: 58px;
+    }
 }
 
 .form-group {
@@ -343,7 +367,6 @@ body {
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	cursor: pointer;
-	border-radius: 4px;
 	transition: background-color 0.3s ease;
 }
 
@@ -369,10 +392,10 @@ body {
 	.section-nav-container {
 		margin: 60px auto;
 		flex-direction: column;
-		gap: 24px;
+		gap: 58px;
 		padding: 24px;
 	}
-	
+
 	.section-nav-container div {
 		flex: none;
 		width: 100%;
@@ -439,6 +462,12 @@ body {
 	text-transform: uppercase;
 	font-size: 12px;
 	letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 600px) {
+	.mosaic__caption {
+	   padding: 12px;
+	}
 }
 
 .mosaic:hover .mosaic__caption {
