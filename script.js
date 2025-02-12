@@ -16,9 +16,12 @@ function hideMenu() {
     
     // Force play on each video
     for(let video of videos) {
-        video.play().catch(function(error) {
-            console.log("Video autoplay failed:", error);
-        });
+			if (window.innerWidth > 768 && video.classList.contains('video-large') || window.innerWidth <= 768 && video.classList.contains('video-small')) {
+				console.log(video.classList);
+				video.play().catch(function(error) {
+					console.log("Video autoplay failed:", error);
+				});
+			}
     }
 });
 
